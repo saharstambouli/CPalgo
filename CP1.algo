@@ -1,29 +1,27 @@
 ALGORITHM SENTENCE
 VAR
-    step,nbcaractere , nbwords,nbvoyels ,i,j : INTEGER
+    step,i,j : INTEGER
     str: STRING
     voyels : STRING
+    nbcaractere  :INTEGER= 0 
+    nbwords :INTEGER = 0
+    nbvoyels: INTEGER = 0 
+    voyels :STRING = "aeiouAEIOU",
+
 BEGIN
     Write ("enter a sentence "),
     read (str),
-nbcaractere  := 0 ,
-nbwords := 0, 
-voyels := "aeiouAEIOU",
+
 FOR i FROM 0 TO str.length-1 STEP step  DO 
-IF (str[i] <> "  " and str[i] <> " . " ) THEN
-    nbcaractere = nbcaractere  + 1 ,
-    FOR j FROM 0 TO voyels.length-1  STEP step  DO
-        IF (str[i] = voyels[j]) THEN
-           nbvoyels= nbvoyels+ 1 ,
-        END_IF
-    END_FOR
+ IF (str[i]= ' ' OR str[i]= '.') THEN
+    nbwords:= nbwords+1 
+ END_IF
+ IF (str[i]= voyels) THEN
+   nbvoyels=nbvoyels+1 
+ END_IF
+ nbcaractere= nbcaractere+1
 
 
-
-ELSE_IF (str[i] = "  " or str[i] = " . " ) THEN
-   nbwords=nbwords+1 ,
-
-END_IF
 END_FOR
  read (nbvoyels),
  read(nbwords),
