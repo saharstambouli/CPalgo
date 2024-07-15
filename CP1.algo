@@ -1,20 +1,20 @@
 ALGORITHM SENTENCE
 VAR
-    step,length , nbwords,nbvoyels ,i,j : INTEGER
+    step,nbcaractere , nbwords,nbvoyels ,i,j : INTEGER
     str: STRING
     voyels : STRING
 BEGIN
     Write ("enter a sentence "),
     read (str),
-length := 0 ,
+nbcaractere  := 0 ,
 nbwords := 0, 
-voyels := "aeiou ",
+voyels := "aeiouAEIOU",
 FOR i FROM 0 TO str.length-1 STEP step  DO 
 IF (str[i] <> "  " and str[i] <> " . " ) THEN
-    length= length + 1 ,
-    FOR j FROM 1 TO voyels.length-1  STEP step  DO
+    nbcaractere = nbcaractere  + 1 ,
+    FOR j FROM 0 TO voyels.length-1  STEP step  DO
         IF (str[i] = voyels[j]) THEN
-           nbvoyels= nbvoyels+1 ,
+           nbvoyels= nbvoyels+ 1 ,
         END_IF
     END_FOR
 
@@ -27,7 +27,7 @@ END_IF
 END_FOR
  read (nbvoyels),
  read(nbwords),
- read(length),
+ read(nbcaractere),
 
 
 END
